@@ -12,18 +12,17 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">Python Blockchain</h3>
-
+  <h3 align="center">Python Blockchain Explorer</h3>
   <p align="center">
-    A blockchain coded in python
+    A block explorer coded in python, built with flask and requests.
     <br />
-    <a href="https://github.com/ock666/python-blockchain"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ock666/python-blockchain-explorer"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     ·
-    <a href="https://github.com/ock666/python-blockchain/issues">Report Bug</a>
+    <a href="https://github.com/ock666/python-blockchain-explorer/issues">Report Bug</a>
     ·
-    <a href="https://github.com/ock666/python-blockchain/issues">Request Feature</a>
+    <a href="https://github.com/ock666/python-blockchain-explorer/issues">Request Feature</a>
   </p>
 </div>
 
