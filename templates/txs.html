@@ -1,0 +1,43 @@
+<!DOCTYPE html> <html style><meta charset=utf-8>
+<title>Blockchain | Transaction {{ tx['transaction_hash'] }} </title>
+ <a href=http://127.0.0.1:5000>
+Home
+</a>
+<h1>Transaction Detail</h1>
+<h3>Transaction Summary</h3>
+<table>
+<tbody><tr>
+<th>Transaction Hash:</th>
+<td>{{ tx['transaction_hash'] }}</td>
+</tr>
+<tr>
+<th>Block:</th>
+<td>
+<a href=http://127.0.0.1:5000/block/{{ explorer.get_block_index_from_transaction(tx) }}>{{ explorer.get_block_index_from_transaction(tx) }}</a>
+</td>
+</tr>
+<tr>
+<th>Time:</th>
+<td>{{ explorer.recent_tx_time(tx) }} </td>
+</tr>
+<tr>
+<th>Sender:</th>
+<td><a href=http://127.0.0.1:5000/addrs/{{ tx['sender'] }}>
+ {{ tx['sender'] }}
+</a> </td>
+</tr>
+<tr>
+<th>Recipient:</th>
+<td><a href=http://127.0.0.1:5000/addrs/{{ tx['recipient'] }}>
+ {{ tx['recipient'] }}
+</a> </td>
+</tr>
+<tr>
+<th>Amount</th>
+<td>{{ tx['amount'] }}</td>
+</tr>
+<tr>
+<th>Fee:</th>
+<td>{{ tx['fee'] }}</td>
+</tr>
+</table>

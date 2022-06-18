@@ -1,0 +1,61 @@
+<!DOCTYPE html> <html><meta charset=utf-8>
+<title>Python Blockchain</title>
+<a href=http://127.0.0.1:5000/>
+Home
+</a>
+<a href=http://127.0.0.1:5000/>
+Faucet
+</a>
+<h1>The Python Blockchain Explorer</h1>
+<form action=/search method=GET>
+<input name=query type=text placeholder="Search by Address / TX Hash / Block Index">
+<button type=submit text="submit">
+</button>
+</form>
+<h2>Block Height</h2>
+<p>{{ length }}</p>
+<h2>Last Block Mined</h2>
+<p>{{ last_block_time }}</p>
+<h2>Total Addresses</h2>
+<p>{{ total_address_num }}</p>
+<div>
+<h2>Unconfirmed Tx</h2>
+<p>{{ mempool_tx_num }}</p>
+<h2>Last Proof</h2>
+<p>{{ last_proof }}{{ endblock }}</p>
+<h2>Total Tx</h2>
+<p>{{ total_tx_num }}</p>
+<h3>Recent Transactions</h3>
+
+ {% for tx in recent_txs %}
+
+ <div>
+TX
+<a href=http://127.0.0.1:5000/txs/{{ tx['transaction_hash'] }}>{{ explorer.truncate_hash(tx['transaction_hash']) }}</a>
+<p>Time Submitted: {{ explorer.recent_tx_time(tx) }}</p>
+</div>
+<div>
+Amount: {{ tx['amount'] }}
+</div>
+ <br>
+</div>
+ {% endfor %}
+<h3 class=font-bold>Recent Blocks</h3>
+</div>
+ {% for block in recent_blocks %}
+
+<div>
+ BL
+<a href=http://127.0.0.1:5000/block/{{ explorer.get_index_from_hash(block['current_hash']) }}>{{ explorer.truncate_hash(block['current_hash']) }}</a>
+<p>
+Mined at: {{ explorer.get_block_time_human(block) }}
+</p>
+</div>
+<div>
+ Proof Nonce: {{ block['proof'] }}
+ <div>
+  <br>
+</div>
+</div>
+ {% endfor %}
+</section>
