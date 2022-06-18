@@ -12,10 +12,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/ock666/python-blockchain-explorer">
-    <img src="pictures/logo.png" alt="Logo" width="300" height="200">
-  </a>
-
   <h3 align="center">Python Blockchain</h3>
 
   <p align="center">
