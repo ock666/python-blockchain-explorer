@@ -1,6 +1,6 @@
 <!DOCTYPE html> <html style><meta charset=utf-8>
 <title>Blockchain | Transaction {{ tx['transaction_hash'] }} </title>
- <a href=http://127.0.0.1:5000>
+ <a href=http://{{ explorer.local_ip }}:5000>
 Home
 </a>
 <h1>Transaction Detail</h1>
@@ -13,7 +13,7 @@ Home
 <tr>
 <th>Block:</th>
 <td>
-<a href=http://127.0.0.1:5000/block/{{ explorer.get_block_index_from_transaction(tx) }}>{{ explorer.get_block_index_from_transaction(tx) }}</a>
+<a href=http://{{ explorer.local_ip }}:5000/block/{{ explorer.get_block_index_from_transaction(tx) }}>{{ explorer.get_block_index_from_transaction(tx) }}</a>
 </td>
 </tr>
 <tr>
@@ -22,13 +22,13 @@ Home
 </tr>
 <tr>
 <th>Sender:</th>
-<td><a href=http://127.0.0.1:5000/addrs/{{ tx['sender'] }}>
+<td><a href=http://{{ explorer.local_ip }}:5000/addrs/{{ tx['sender'] }}>
  {{ tx['sender'] }}
 </a> </td>
 </tr>
 <tr>
 <th>Recipient:</th>
-<td><a href=http://127.0.0.1:5000/addrs/{{ tx['recipient'] }}>
+<td><a href=http://{{ explorer.local_ip }}:5000/addrs/{{ tx['recipient'] }}>
  {{ tx['recipient'] }}
 </a> </td>
 </tr>

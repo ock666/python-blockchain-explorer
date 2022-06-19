@@ -1,9 +1,9 @@
 <!DOCTYPE html> <html><meta charset=utf-8>
 <title>Python Blockchain</title>
-<a href=http://127.0.0.1:5000/>
+<a href=http://{{ explorer.local_ip }}:5000/>
 Home
 </a>
-<a href=http://127.0.0.1:5000/>
+<a href=http://{{ explorer.local_ip }}:5000/>
 Faucet
 </a>
 <h1>The Python Blockchain Explorer</h1>
@@ -31,7 +31,7 @@ Faucet
 
  <div>
 TX
-<a href=http://127.0.0.1:5000/txs/{{ tx['transaction_hash'] }}>{{ explorer.truncate_hash(tx['transaction_hash']) }}</a>
+<a href=http://{{ explorer.local_ip }}:5000/txs/{{ tx['transaction_hash'] }}>{{ explorer.truncate_hash(tx['transaction_hash']) }}</a>
 <p>Time Submitted: {{ explorer.recent_tx_time(tx) }}</p>
 </div>
 <div>
@@ -46,7 +46,7 @@ Amount: {{ tx['amount'] }}
 
 <div>
  BL
-<a href=http://127.0.0.1:5000/block/{{ explorer.get_index_from_hash(block['current_hash']) }}>{{ explorer.truncate_hash(block['current_hash']) }}</a>
+<a href=http://{{ explorer.local_ip }}:5000/block/{{ explorer.get_index_from_hash(block['current_hash']) }}>{{ explorer.truncate_hash(block['current_hash']) }}</a>
 <p>
 Mined at: {{ explorer.get_block_time_human(block) }}
 </p>

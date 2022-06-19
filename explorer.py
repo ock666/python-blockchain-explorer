@@ -3,12 +3,19 @@ import requests
 from datetime import datetime
 
 
+
+
 class explorer():
 
     def __init__(self):
         self.node = input("Please input the address of a blockchain node:\n")
         self.chain = self.get_chain()
         self.recenttx = self.get_recent_transactions()
+        self.local_ip = input("Please input the domain or IP the explorer will be run on:\n")
+
+
+
+
 
     def total_address_sent(self, address):
         all_transactions_amounts = 0
@@ -166,7 +173,6 @@ app = Flask(__name__)
 @app.route("/block/<index>")
 def block_view(index):
     block = explorer.get_block_from_index(index)
-    print(block)
     return render_template("block.html",
                            index=index,
                            block=block,

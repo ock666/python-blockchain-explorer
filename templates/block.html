@@ -1,10 +1,10 @@
 <!DOCTYPE html><meta charset=utf-8>
 <meta name=viewport content="width=device-width, initial-scale=1.0">
 <title>Blockchain | Block {{ block['index'] }}</title>
-<a href=http://127.0.0.1:5000>
+<a href=http://{{ explorer.local_ip }}:5000>
 Home
 </a>
-<a href=http://127.0.0.1:5000>
+<a href=http://{{ explorer.local_ip }}:5000>
 Faucet
 </a>
 <h1>Block Detail</h1>
@@ -28,7 +28,7 @@ Faucet
 <tr>
 <th>Previous Block: </th>
 <td>
-<a href=http://127.0.0.1:5000/block/{{ block['index'] - 1 }} class=text-purple-500>{{ block['previous_hash'] }}</a>
+<a href=http://{{ explorer.local_ip }}:5000/block/{{ block['index'] - 1 }} class=text-purple-500>{{ block['previous_hash'] }}</a>
 </td>
 </tr>
 <tr>
@@ -38,10 +38,10 @@ Faucet
 </table>
  {% for transaction in block['transactions'] %}
 <h3>
-TX # <a href=http://127.0.0.1:5000/txs/{{ transaction['transaction_hash'] }} class=text-purple-500>{{ transaction['transaction_hash'] }}</a>
+TX # <a href=http://{{ explorer.local_ip }}:5000/txs/{{ transaction['transaction_hash'] }} class=text-purple-500>{{ transaction['transaction_hash'] }}</a>
 </h3>
 <h4>Sender</h4>
-<a href=http://127.0.0.1:5000/addrs/{{ transaction['sender'] }}>
+<a href=http://{{ explorer.local_ip }}:5000/addrs/{{ transaction['sender'] }}>
  {{ transaction['sender'] }}
 </a>
 <div>
@@ -52,7 +52,7 @@ fee {{ transaction['fee'] }}
 <h4>Recipient</h4>
 <div class=space-y-4>
 <div class="flex flex-row items-center">
-<a href=http://127.0.0.1:5000/addrs/{{ transaction['recipient'] }} class="text-purple-500 text-reg">
+<a href=http://{{ explorer.local_ip }}:5000/addrs/{{ transaction['recipient'] }} class="text-purple-500 text-reg">
 {{ transaction['recipient'] }}
 </a>
 </div>

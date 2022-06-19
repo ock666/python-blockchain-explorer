@@ -1,10 +1,10 @@
 <!DOCTYPE html> <html style>
 <title>Blockchain | Address {{ addr }}</title>
 <div>
-<a href=http://127.0.0.1:5000/>
+<a href=http://{{ explorer.local_ip }}:5000/>
 Home
 </a>
-<a href=http://127.0.0.1:5000>
+<a href=http://{{ explorer.local_ip }}:5000>
 Faucet
 </a>
 <div>
@@ -40,16 +40,16 @@ Faucet
 </div>
  {% for tx in all_transactions %}
 <h3>
-    <a href=http://127.0.0.1:5000/txs/{{ tx['transaction_hash'] }}>
+    <a href=http://{{ explorer.local_ip }}:5000/txs/{{ tx['transaction_hash'] }}>
     TX # {{ tx['transaction_hash'] }}
     </a>
 </h3>
-<a href=http://127.0.0.1:5000/addrs/{{ tx['sender'] }}> {{ tx['sender'] }}</a>
+<a href=http://{{ explorer.local_ip }}:5000/addrs/{{ tx['sender'] }}> {{ tx['sender'] }}</a>
   <h4>Sent: {{ tx['amount'] }}</h4>
  <h4>Fee: {{ tx['fee'] }}</h4>
  <h4>Timestamp: {{ explorer.recent_tx_time(tx) }}</h4>
     <h4>previous block hash:
-<a href=https://blockexplorer.com/block/{{ explorer.get_index_from_hash(tx['previous_block_hash']) }}> {{ explorer.truncate_hash(tx['previous_block_hash']) }}</a></h4>
+<a href=http://{{ explorer.local_ip }}:5000/block/{{ explorer.get_index_from_hash(tx['previous_block_hash']) }}> {{ explorer.truncate_hash(tx['previous_block_hash']) }}</a></h4>
 <div class=space-y-4>
 <div>
 <div class=text-sm>
@@ -62,7 +62,7 @@ Faucet
 <img src=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAxMyAyMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAuMzQ0MTE2IDE5LjU3MDNDMC4zNDQxMTYgMjAuODM1OSAxLjgyMDY4IDIxLjQ2ODggMi43MzQ3NCAyMC41NTQ3TDExLjczNDcgMTEuNTU0N0MxMi4yOTcyIDEwLjk5MjIgMTIuMjk3MiAxMC4wNzgxIDExLjczNDcgOS41MTU2MkwyLjczNDc0IDAuNTE1NjI1QzEuODIwNjggLTAuMzk4NDM4IDAuMzQ0MTE2IDAuMjM0Mzc1IDAuMzQ0MTE2IDEuNVYxOS41NzAzWiIgZmlsbD0iIzRDMzNCMCIvPgo8L3N2Zz4K>
 </div>
 <div class="mt-4 md:mt-0 w-100 md:w-50 flex-1">
-<a class="uppercase mb-2 text-xs font-semibold text-gray-400" href=http://127.0.0.1:5000/addrs/{{ tx['recipient'] }}> {{ tx['recipient'] }}<div class=space-y-4>
+<a class="uppercase mb-2 text-xs font-semibold text-gray-400" href=http://{{ explorer.local_ip }}:5000/addrs/{{ tx['recipient'] }}> {{ tx['recipient'] }}<div class=space-y-4>
 <div class="flex flex-row items-center">
 
 </div>
